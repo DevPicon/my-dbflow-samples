@@ -1,18 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pe.devpicon.android.basicsamples.MainActivity">
+    tools:context="pe.devpicon.android.basicsamples.mvp.view.MainActivity">
 
     <TextView
+        android:id="@+id/textview_dbflow_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="@dimen/generic_padding"
+        android:text="@string/dbflow" />
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textinputlayout_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_dbflow_title">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edittext_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edittext_id"
+            android:inputType="number"
+            android:padding="@dimen/generic_padding" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textinputlayout_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textinputlayout_id">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edittext_fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edittext_fullname"
+            android:inputType="textPersonName"
+            android:padding="@dimen/generic_padding" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textinputlayout_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textinputlayout_fullname">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edittext_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edittext_age"
+            android:inputType="textPersonName"
+            android:padding="@dimen/generic_padding" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/button_save" />
+
+    <Button
+        android:id="@+id/button_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toEndOf="@id/button_save"
+        android:layout_toRightOf="@id/button_save"
+        android:text="@string/button_update" />
+
+    <Button
+        android:id="@+id/button_read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_above="@+id/button_update"
+        android:text="@string/button_read" />
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@id/button_save"
+        android:layout_toStartOf="@id/button_save"
+        android:text="@string/button_delete" />
+
+    <Button
+        android:id="@+id/button_wipe_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_save"
+        android:layout_centerInParent="true"
+        android:text="@string/button_wipe_data" />
+
+    <TextView
+        android:id="@+id/textview_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_wipe_data"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/double_margin"
+        android:text="@string/nothing_to_show" />
+
+</RelativeLayout>
