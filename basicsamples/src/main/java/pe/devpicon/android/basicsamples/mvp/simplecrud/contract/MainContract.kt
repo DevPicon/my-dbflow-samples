@@ -1,4 +1,4 @@
-package pe.devpicon.android.basicsamples.mvp.contract
+package pe.devpicon.android.basicsamples.mvp.simplecrud.contract
 
 import pe.devpicon.android.basicsamples.model.Customer
 

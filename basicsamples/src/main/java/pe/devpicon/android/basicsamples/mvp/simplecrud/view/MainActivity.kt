@@ -1,4 +1,4 @@
-package pe.devpicon.android.basicsamples.mvp.view
+package pe.devpicon.android.basicsamples.mvp.simplecrud.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import pe.devpicon.android.basicsamples.R
 import pe.devpicon.android.basicsamples.model.Customer
-import pe.devpicon.android.basicsamples.mvp.contract.MainContract
-import pe.devpicon.android.basicsamples.mvp.presenter.MainPresenter
+import pe.devpicon.android.basicsamples.mvp.simplecrud.contract.MainContract
+import pe.devpicon.android.basicsamples.mvp.simplecrud.presenter.MainPresenter
 
 class MainActivity : AppCompatActivity(), MainContract.View, View.OnClickListener {
     override fun populateForm(customer: Customer?) {
