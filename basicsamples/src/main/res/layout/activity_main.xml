@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pe.devpicon.android.basicsamples.mvp.view.MainActivity">
+    tools:context=".mvp.simplecrud.view.MainActivity">
 
     <TextView
         android:id="@+id/textview_dbflow_title"
