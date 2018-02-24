@@ -9,6 +9,6 @@ import com.raizlabs.android.dbflow.annotation.Database
 class CustomerDatabase {
     companion object {
         const val NAME = "customer"
-        const val VERSION = 1
+        const val VERSION = 2
     }
 }
