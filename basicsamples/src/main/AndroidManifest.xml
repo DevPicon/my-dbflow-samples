@@ -10,10 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mvp.view.MainActivity">
+        <activity
+            android:name=".mvp.simplecrud.view.MainActivity"
+            android:parentActivityName=".mvp.start.StartActivity" />
+        <activity android:name=".mvp.start.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
