@@ -10,4 +10,7 @@ import pe.devpicon.android.basicsamples.database.CustomerDatabase
  * Created by devpicon on 2/19/18.
  */
 @Table(database = CustomerDatabase::class)
-data class Customer(@PrimaryKey(autoincrement = true) var id : Int = 0, @Column var name : String? = null, @Column var age : Int = 0 ) : BaseModel()
+data class Customer(@PrimaryKey(autoincrement = true)
+                    var id : Int = 0,
+                    @Column var name : String? = null,
+                    @Column var age : Int = 0 ) : BaseModel()

@@ -3,6 +3,7 @@ package pe.devpicon.android.basicsamples.mvp.presenter
 import com.raizlabs.android.dbflow.sql.language.SQLite
 import pe.devpicon.android.basicsamples.model.Customer
 import pe.devpicon.android.basicsamples.model.Customer_Table
+import pe.devpicon.android.basicsamples.model.Pet
 import pe.devpicon.android.basicsamples.mvp.contract.MainContract
 
 /**
@@ -10,8 +11,10 @@ import pe.devpicon.android.basicsamples.mvp.contract.MainContract
  */
 class MainPresenter(val view: MainContract.View) : MainContract.Presenter {
     override fun readCustomer(id: String) {
-        val customer = SQLite.select().from(Customer::class.java)
-                .where(Customer_Table.id.eq(id.toInt())).querySingle()
+        /*val customer = SQLite.select().from(Customer::class.java)
+                .where(Customer_Table.id.eq(id.toInt())).querySingle()*/
+        var customer = Customer(id.toInt())
+        customer.load()
         view.populateForm(customer)
     }
 
@@ -22,6 +25,14 @@ class MainPresenter(val view: MainContract.View) : MainContract.Presenter {
 
     override fun updateCustomer(id: String, fullname: String, age: String) {
         Customer(id.toInt(), fullname, age.toInt()).update()
+
+        var nickname : String? = null
+        var ageInt : Int? = age.toInt()
+
+        Pet(id.toInt(), nickname, ageInt).update()
+
+
+
         loadAllCustomers()
     }
 
@@ -47,6 +58,7 @@ class MainPresenter(val view: MainContract.View) : MainContract.Presenter {
 
     private fun save(fullname: String, age: String) {
         Customer(0, fullname, age.toInt()).save()
+        Pet(nickname = fullname, age = age.toInt()).save()
     }
 
 }
